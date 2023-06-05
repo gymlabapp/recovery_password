@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change password</title>
+  <link rel="icon" href="icon.png" border-radius: 5px; type="image/png">
+  <script>
+    function checkPasswords() {
+      var newpassword = document.getElementById('new-password').value;
+      var confirmpassword = document.getElementById('confirm-password').value;
+
+      if (newpassword === confirmpassword) {
+        if (newpassword.length < 6) {
+          alert('The password must be at least 6 characters long. Please try again.');
+        } else {
+          document.getElementById('form').style.display = 'none';
+          document.getElementById('logo').style.display = 'none';
+          document.getElementById('reset').style.display = 'flex';
+          document.getElementById('logo2').style.display = 'flex';
+          alert('Password changed successfully!');
+        }
+      } else {
+        alert("The passwords don't match, try again.");
+      }
+    }
+  </script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="form">
+    <label for="new-password">New password:</label>
+    <input type="password" id="new-password" placeholder="New password">
+
+    <br>
+
+    <label for="confirm-password">Confirm new password:</label>
+    <input type="password" id="confirm-password" placeholder="Confirm new password">
+
+    <br>
+
+    <button onclick="checkPasswords()">Change password</button>
+  </div>
+  <div id="logo">
+    <img src="logo.png" alt="GIF" />
+  </div>
+  <div id="reset">
+    Password correctly changed!
+  </div>
+  <div id="logo2">
+    <img src="logo2.gif" alt="GIF" />
+  </div>
+</body>
+</html>
